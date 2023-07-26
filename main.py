@@ -1,13 +1,20 @@
-from graphic import SectorChart
+from graphic import SectorGraph
 
-# "I always use numbers that are power of two as constants"
-#                                   - Nick Kipshidze - 2023
+pie = SectorGraph(
+    labels = ["C", "Rust", "Python", "Ruby", "C++", "PHP", "JavaScript", "Java", "C#"],
+    sizes = [3.2, 8.4, 27.5, 5.3, 13.7, 1.5, 20.6, 16.0, 3.8],
+    resolution = (780, 512),
+    radius = 250,
+    center = (520, 256),
+    legend = False
+)
 
-pie = SectorChart(
-    labels = ["Sleep", "Programming", "Rest"],
-    sizes = [5, 85, 10],
-    resolution = (1024, 512),
-    radius = 250
+pie.draw_legend(
+    padding = 10,
+    box_size = 20,
+    font_size = 18,
+    outline = 0,
+    vertical_gaps = 10
 )
 
 pie.save("output.png")
